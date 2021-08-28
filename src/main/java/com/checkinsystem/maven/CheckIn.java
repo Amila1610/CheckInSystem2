@@ -1,7 +1,7 @@
 package com.checkinsystem.maven;
 
-import com.checkinsystem.maven.business.controller.Controller;
-import com.checkinsystem.maven.business.gui.LoginView;
+import com.checkinsystem.Common.Controller.Controller;
+import com.checkinsystem.Common.gui.LoginView;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
