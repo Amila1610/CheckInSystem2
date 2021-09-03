@@ -8,6 +8,7 @@ package com.checkinsystem.Employee;
 import com.checkinsystem.Destination.Destination;
 import com.checkinsystem.Destination.dao.DestinationJpaDao;
 import com.checkinsystem.Employee.dao.EmployeeJpaDao;
+import java.math.BigDecimal;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -48,8 +49,12 @@ public class EmployeePanel extends VBox{
         TableColumn<Destination,String> codeColumn= new TableColumn<>("Code");
         codeColumn.setMinWidth(150);
         codeColumn.setCellValueFactory(new PropertyValueFactory<Destination,String>("code"));
+        
+         TableColumn<Destination,BigDecimal> priceColumn= new TableColumn<>("Price/KM");
+        priceColumn.setMinWidth(150);
+        priceColumn.setCellValueFactory(new PropertyValueFactory<Destination,BigDecimal>("price"));
          
-         destinationTableView.getColumns().addAll(destinationColumn,numOfDaysColumn,codeColumn);
+         destinationTableView.getColumns().addAll(destinationColumn,numOfDaysColumn,codeColumn, priceColumn);
         getChildren().addAll(titleLabel,destinationTableView);
       
     }

@@ -10,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 
@@ -19,7 +20,6 @@ public class LoginView extends GridPane{
     private final Label passwordLabel=new Label("Password: ");
     private final PasswordField passwordField=new PasswordField();
     private final Button loginButton=new Button("Sign in");
-    private final Button cancelButton=new Button("Cancel");
     private final Label messageLabel=new Label("");
     
     
@@ -38,13 +38,14 @@ public class LoginView extends GridPane{
     
     FlowPane buttonFlowPane= new FlowPane();
     buttonFlowPane.setAlignment(Pos.CENTER_RIGHT);
-    buttonFlowPane.getChildren().addAll(loginButton,cancelButton);
+    buttonFlowPane.getChildren().addAll(loginButton);
     add(buttonFlowPane,1,2);
     add(messageLabel,1,3);
     
     EventBus eventBus=Controller.instance().getEventBus();
     loginButton.setOnAction(eventBus.getLoginEvent());
-    cancelButton.setOnAction(eventBus.getCancelEvent());
+    //loginButton.setMnemonic(KeyEvent.);
+    //cancelButton.setOnAction(eventBus.getCancelEvent());
 
     }
 

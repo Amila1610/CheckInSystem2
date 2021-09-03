@@ -15,7 +15,7 @@ public class CheckIn extends Application {
         Controller.instance().setPrimaryStage(primaryStage);
         LoginView loginView=new LoginView();
         Controller.instance().setLoginView(loginView);
-        Scene scene=new Scene(loginView, 650,180);
+        Scene scene=new Scene(loginView, 600,180);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Login View");
         primaryStage.show();
