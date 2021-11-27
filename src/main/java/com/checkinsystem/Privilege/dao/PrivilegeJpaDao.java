@@ -17,6 +17,8 @@ public class PrivilegeJpaDao implements JpaDao<Privilege> {
 
     @Override
     public Privilege get(long id) {
+       /* Query query=entityManager().createNamedQuery("Privilege.findByName");
+        return query.getResultList()*/
     return entityManager().find(Privilege.class, id);
     }
 

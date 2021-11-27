@@ -32,6 +32,7 @@ import javax.xml.bind.annotation.XmlTransient;
 @NamedQueries({
     @NamedQuery(name = "Privilege.findAll", query = "SELECT p FROM Privilege p"),
     @NamedQuery(name = "Privilege.findById", query = "SELECT p FROM Privilege p WHERE p.id = :id"),
+    
     @NamedQuery(name = "Privilege.findByName", query = "SELECT p FROM Privilege p WHERE p.name = :name")})
 public class Privilege implements Serializable {
 
@@ -47,16 +48,17 @@ public class Privilege implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idPrivilege")
     private List<Employee> employeeList;
 
-    public Privilege() {
+    public Privilege(Integer id, String name) {
+        this.id=id;
+        this.name=name;
     }
 
     public Privilege(Integer id) {
         this.id = id;
     }
 
-    public Privilege(Integer id, String name) {
-        this.id = id;
-        this.name = name;
+    public Privilege() {
+       
     }
 
     public Integer getId() {
@@ -106,7 +108,7 @@ public class Privilege implements Serializable {
 
     @Override
     public String toString() {
-        return "Privilege of this user is: " + name;
+        return "Privilege : " + name;
     }
     
 }

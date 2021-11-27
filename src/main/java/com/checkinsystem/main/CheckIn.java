@@ -1,4 +1,4 @@
-package com.checkinsystem.maven;
+package com.checkinsystem.main;
 
 import com.checkinsystem.Common.Controller.Controller;
 import com.checkinsystem.Common.gui.LoginView;

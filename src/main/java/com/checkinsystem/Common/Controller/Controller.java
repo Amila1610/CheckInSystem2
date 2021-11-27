@@ -1,5 +1,7 @@
 package com.checkinsystem.Common.Controller;
 
+//import com.checkinsystem.Common.SignUpView;
+import com.checkinsystem.Common.SignUpView;
 import com.checkinsystem.Common.event.EventBus;
 import com.checkinsystem.Employee.Employee;
 import com.checkinsystem.Common.gui.LoginView;
@@ -14,10 +16,20 @@ public class Controller {
     private LoginView loginView;
     private AdminView adminView;
     private EmployeeView employeeView;
-    
+    private SignUpView signUpView;
+
     private Employee loggedEmployee;
-    private Destination selectedDestination;
+    //private Destination selectedDestination;
     
+    
+    /*public SignUpView getSignUpView() {
+        return signUpView;
+    }
+
+    public void setSignUpView(SignUpView signUpView) {
+        this.signUpView = signUpView;
+    }*/
+   
     private Controller(){
         super();
     }
@@ -40,6 +52,15 @@ public class Controller {
 
     public void setLoginView(LoginView loginView) {
         this.loginView = loginView;
+    }
+    
+    
+    public SignUpView getSignUpView() {
+        return signUpView;
+    }
+
+    public void setSignUpView(SignUpView signUpView) {
+        this.signUpView = signUpView;
     }
 
     public AdminView getAdminView() {
@@ -66,13 +87,13 @@ public class Controller {
         this.loggedEmployee = loggedEmployee;
     }
     
-    public Destination getSelectedDestination() {
+    /*public Destination getSelectedDestination() {
         return selectedDestination;
     }
 
     public void setSelectedDestination(Destination selectedDestination) {
         this.selectedDestination = selectedDestination;
-    }
+    }*/
     private static Controller INSTANCE=null;
     
     public static Controller instance(){

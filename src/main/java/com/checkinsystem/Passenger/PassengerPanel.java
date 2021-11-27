@@ -50,7 +50,7 @@ public class PassengerPanel extends VBox{
          
          TableColumn<Passenger,String> resColumn= new TableColumn<>("Reservation");
          resColumn.setMinWidth(150);
-         resColumn.setCellValueFactory(new PropertyValueFactory<Passenger,String>("id_reservation"));
+         resColumn.setCellValueFactory(new PropertyValueFactory<Passenger,String>("id_resevration"));
          
          passengerTableView.getColumns().addAll(nameColumn,surnameColumn,documentColumn, resColumn);
         getChildren().addAll(titleLabel,passengerTableView);

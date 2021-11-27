@@ -18,6 +18,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
@@ -36,6 +37,7 @@ public class UserAdminPanel extends VBox{
     
     private Button addEmployeeButton= new Button("Add");
     private Button deleteEmployeeButton= new Button("Delete");
+    
     
     
     public UserAdminPanel(){
@@ -92,6 +94,7 @@ privilegeSelector.setItems(observablePrivileges) ;
         addEmployeeButton.setOnAction(this::insertOrUpdateEmployee);
         deleteEmployeeButton.setOnAction(this::removeEmployee);
         
+        
         hBox.getChildren().addAll(usernameInput,passwordInput,nameInput,surnameInput
                 ,privilegeSelector,addEmployeeButton,deleteEmployeeButton);
         return hBox;
@@ -140,4 +143,5 @@ privilegeSelector.setItems(observablePrivileges) ;
         nameInput.clear();
         surnameInput.clear();
     }
+   
 }

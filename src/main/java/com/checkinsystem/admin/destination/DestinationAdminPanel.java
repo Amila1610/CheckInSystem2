@@ -129,7 +129,7 @@ public class DestinationAdminPanel extends VBox{
     }
      private void loadTableItems(){
         destinations=FXCollections.observableArrayList(new DestinationJpaDao().getAll());
-        destinations.remove(Controller.instance().getSelectedDestination());
+       // destinations.remove(Controller.instance().getSelectedDestination());
         destinationTableView.setItems(destinations);
     }
     

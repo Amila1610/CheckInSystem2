@@ -41,12 +41,7 @@ public class DestinationJpaDao implements JpaDao<Destination> {
 
     @Override
     public void delete(Destination destination) {
-        executeInsideTransaction(em -> {
-            if (!em.contains(destination)) {
-                em.merge(destination);
-            }
-            em.remove(destination);
-        });
+        executeInsideTransaction(em -> em.remove(em.contains(destination)?destination:em.merge(destination)));
     }
 
     public Destination findByDestination(String des) {

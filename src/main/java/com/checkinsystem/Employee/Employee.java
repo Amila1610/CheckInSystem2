@@ -19,6 +19,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  *
@@ -95,7 +96,7 @@ public class Employee implements Serializable {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = DigestUtils.md5Hex(password);
     }
 
     public String getName() {

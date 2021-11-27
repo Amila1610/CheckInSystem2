@@ -1,4 +1,4 @@
-package com.checkinsystem.maven;
+package com.checkinsystem.main;
 
 import com.checkinsystem.Privilege.Privilege;
 import com.checkinsystem.admin.gui.AdminView;
@@ -8,6 +8,8 @@ import javafx.scene.layout.Pane;
 public enum AccessPrivilege {
     ADMIN(1,"admin", new AdminView()),
     EMPLOYEE(2,"user", new EmployeeView());
+
+   
     
     private final int id;
     private final String name;
